@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informacion del repositorio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h3>Datos</h3>
+  <ion-img width="35" height="35" src="{{elementounico.owner.avatar_url}}"></ion-img>
+  <p><b>Identificador .......... {{ elementounico.id }}</b></p>
+  <p><b>Nombre ............ {{ elementounico.owner.name }}</b></p>
+  <p><b>Login ............. {{ elementounico.owner.login }}</b></p>
+  <p><b>{{ elementounico.description }}</b></p>
+  <p><b>Ruta del repositorio ............. {{ elementounico.html_url }}</b></p>
+  <ion-button color="primary"
+              (click)="guardando()">
+              Guardar en FireBase
+  </ion-button>
+</ion-content>

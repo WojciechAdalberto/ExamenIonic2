@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar [color]="primary">
+    <ion-title>
+      Buscador de repositorio de gitHub
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <p><ion-label><h3>¿Qué buscare en gitHub? </h3></ion-label></p>
+    <p><ion-input [(ngModel)]="textob"></ion-input></p>
+  </ion-item>
+
+  <ion-button color="primary"
+              (click)="generaconsulta()">
+              Consulta datos
+  </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let encontrado of elementos; let i = index">
+      <ion-img width="35" height="35" src="{{encontrado.owner.avatar_url}}" (click)="abrir_modal( i )"></ion-img>
+      <p>
+        Nombre :{{ encontrado.name }}
+      </p>
+      <p>
+        --------- Login: {{ encontrado.owner.login }}
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
